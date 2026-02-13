@@ -1,0 +1,134 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    min-height: 100%;
+    background: linear-gradient(185deg, #eef8f4, #f1e9e0);
+}
+
+body {
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+    min-height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+a {
+    color: #1c4777;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #46a0ff;
+}
+
+.post-footer,
+.blog-feeds {
+    display: none !important;
+}
+
+header {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(15px) saturate(180%);
+    -webkit-backdrop-filter: blur(15px) saturate(180%);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 20px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+header h1 {
+    font-size: 1.8rem;
+    color: #1c4777;
+}
+
+.container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+/* Blog posts wrapper as flex */
+.blog-posts.hfeed {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 25px !important;
+    justify-content: center !important;
+    padding: 0 !important;
+    list-style: none !important;
+}
+
+.post-outer {
+    width: 20rem !important;
+}
+
+/* Each post card */
+li.post-outer,
+div.post-outer {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    flex: 1 1 20rem !important;
+    width: 100% !important;
+    background: rgba(255, 255, 255, 0.7) !important;
+    backdrop-filter: blur(10px) saturate(180%) !important;
+    border-radius: 15px !important;
+    padding: 10px !important;
+    box-sizing: border-box !important;
+}
+
+/* Images inside post card */
+li.post-outer img,
+div.post-outer img {
+    width: 20rem !important;
+    height: 20rem !important;
+    margin: 0 auto;
+    object-fit: cover !important;
+    border-radius: 10px !important;
+    display: block !important;
+    margin-bottom: 10px !important;
+}
+
+/* Post title */
+li.post-outer h2.post-title a,
+div.post-outer h2.post-title a {
+    font-size: 1.3rem !important;
+    color: #1c4777 !important;
+    text-align: center !important;
+    text-decoration: none !important;
+    word-wrap: break-word !important;
+    margin: 1rem !important;
+}
+
+/* Post snippet */
+li.post-outer div.post-body p,
+div.post-outer div.post-body p {
+    text-align: justify !important;
+    color: #333 !important;
+    font-size: 0.95rem !important;
+    overflow: hidden !important;
+    display: -webkit-box !important;
+    -webkit-box-orient: vertical !important;
+}
+
+/* Date header styling */
+h2.date-header span {
+    font-size: 0.9rem;
+    color: #555;
+    display: block;
+    margin: 10px 0;
+    text-align: center;
+}
+
+footer {
+    text-align: center;
+    padding: 15px 0;
+    font-size: 0.9rem;
+    color: #555;
+    border-top: 1px solid #ddd;
+}
