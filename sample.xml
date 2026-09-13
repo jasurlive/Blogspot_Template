@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title><data:blog.title/></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <b:skin><![CDATA[
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    min-height: 100%;
+    background: linear-gradient(185deg, #eef8f4, #f1e9e0);
+}
+
+body {
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+    min-height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+a {
+    color: #1c4777;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #46a0ff;
+}
+
+.post-footer,
+.blog-feeds {
+    display: none !important;
+}
+
+header {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(15px) saturate(180%);
+    -webkit-backdrop-filter: blur(15px) saturate(180%);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 20px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+header h1 {
+    font-size: 1.8rem;
+    color: #1c4777;
+}
+
+.container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.blog-posts.hfeed {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)) !important;
+    gap: 20px !important;
+    justify-content: center !important;
+    padding: 0 !important;
+    list-style: none !important;
+    text-align: center !important;
+}
+
+.date-outer,
+.date-posts {
+    display: contents !important;
+}
+
+h2.date-header {
+    display: none !important;
+}
+
+li.post-outer,
+div.post-outer {
+    aspect-ratio: 1 / 1 !important;
+    display: grid !important;
+    grid-template-rows: auto 1fr !important;
+    overflow: hidden !important;
+    background: rgba(255, 255, 255, 0.7) !important;
+    backdrop-filter: blur(10px) saturate(180%) !important;
+    border-radius: 15px !important;
+    padding: 10px !important;
+}
+
+li.post-outer img,
+div.post-outer img {
+    width: 70% !important;
+    aspect-ratio: 1 / 1 !important;
+    height: auto !important;
+    object-fit: cover !important;
+    border-radius: 10px !important;
+    display: block !important;
+    justify-self: center !important;
+    margin: 0 auto 8px !important;
+}
+
+li.post-outer h2.post-title a,
+div.post-outer h2.post-title a {
+    font-size: 1.1rem !important;
+    color: #1c4777 !important;
+    text-align: center !important;
+    word-wrap: break-word !important;
+    margin: 6px 0 !important;
+}
+
+li.post-outer div.post-body p,
+div.post-outer div.post-body p {
+    text-align: justify !important;
+    color: #333 !important;
+    font-size: 0.85rem !important;
+    overflow: hidden !important;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 3 !important;
+    -webkit-box-orient: vertical !important;
+}
+
+.item-page div.post-outer {
+    aspect-ratio: unset !important;
+    max-width: 600px !important;
+    margin: 20px auto !important;
+    overflow: visible !important;
+    align-items: center !important;
+}
+
+.item-page div.post-outer img {
+    width: 100% !important;
+    max-width: 400px !important;
+    height: auto !important;
+    aspect-ratio: 1 / 1 !important;
+    object-fit: cover !important;
+    margin: 0 auto 15px !important;
+}
+
+.item-page div.post-body p {
+    display: block !important;
+}
+
+.blog-pager {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 10px !important;
+    margin: 20px 0 !important;
+}
+
+.blog-pager a {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-width: 90px !important;
+    padding: 10px 16px !important;
+    border: 1px solid rgba(28, 71, 119, 0.15) !important;
+    border-radius: 10px !important;
+    background: rgba(255, 255, 255, 0.65) !important;
+    color: #1c4777 !important;
+    font-size: 0.9rem !important;
+    font-weight: 600 !important;
+    text-decoration: none !important;
+    backdrop-filter: blur(10px) !important;
+}
+
+.blog-pager a:hover {
+    background: rgba(255, 255, 255, 0.9) !important;
+    color: #46a0ff !important;
+}
+
+.blog-pager .home-link {
+    display: inline-flex !important;
+}
+
+footer {
+    text-align: center;
+    padding: 15px 0;
+    font-size: 0.9rem;
+    color: #555;
+    border-top: 1px solid #ddd;
+}
+
+@media (max-width: 480px) {
+    .blog-posts.hfeed {
+        grid-template-columns: 1fr !important;
+    }
+
+    .blog-pager {
+        gap: 6px !important;
+    }
+
+    .blog-pager a {
+        min-width: 80px !important;
+        padding: 9px 12px !important;
+    }
+}
+]]></b:skin>
+</head>
+
+<body expr:class='data:view.isSingleItem ? "item-page" : "index-page"'>
+  <header>
+    <h1>jasur's blogs in the attic</h1>
+  </header>
+
+  <div class="container">
+    <b:section id="main" class="blog-posts section hfeed" showaddelement="yes">
+      <b:widget id="Blog1" type="Blog"/>
+    </b:section>
+  </div>
+
+  <footer>
+    &#169; <data:blog.title/> | Designed by jasurlive
+  </footer>
+</body>
+</html>
